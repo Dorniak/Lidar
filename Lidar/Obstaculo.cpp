@@ -11,11 +11,11 @@ void Obstaculo::setVelocity()
 {
 	//TODO::Calcular el modulo del vector direccion y multiplicarlo por el tiempo de barrido
 }
-Punto3D Obstaculo::getCenter()
+Punto3D^ Obstaculo::getCenter()
 {
 	return Center;
 }
-Punto3D Obstaculo::getPCenter()
+Punto3D^ Obstaculo::getPCenter()
 {
 	return PrediceCenter;
 }
