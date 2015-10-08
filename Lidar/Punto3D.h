@@ -1,9 +1,9 @@
 #pragma once
-#include <vector>
+
 using namespace System;
 using namespace std;
 
-class Punto3D
+ref class Punto3D
 	{
 	public:
 		Punto3D(double d, double i, double r);

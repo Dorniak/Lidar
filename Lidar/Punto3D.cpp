@@ -81,7 +81,7 @@ void Punto3D::setAngle(int channel)
 	}
 }
 void Punto3D::visualize() {
-	//TODO: IMPLEMENT
+	Console::WriteLine("Distance: {0}\t Intensidad: {1}\t Aimuth {2}",Distance,Intensity,Azimuth);
 }
 bool Punto3D::getExists()
 {
