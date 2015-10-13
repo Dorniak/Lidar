@@ -7,7 +7,7 @@ ref class Obstaculo
 public:
 	Obstaculo();
 
-	void setDirection(Punto3D antPosition);//Pone la direccion al obstaculo
+	void setDirection(Punto3D^ antPosition);//Pone la direccion al obstaculo
 	void setVelocity();//Pone la velocidad a partir del modulo del vector de direccion
 
 	Punto3D^ getCenter();//Devuelve el centro del obstaculo

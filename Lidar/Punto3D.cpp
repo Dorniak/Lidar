@@ -109,11 +109,11 @@ double Punto3D::getIntensity() {
 double Punto3D::getAzimuth() {
 	return Azimuth;
 }
-double Punto3D::distanceToPoint(Punto3D p)
+double Punto3D::distanceToPoint(Punto3D ^p)
 {
-	double x = Math::Pow(p.getCoordinatesX() - this->getCoordinatesX(), 2);
-	double y = Math::Pow(p.getCoordinatesY() - this->getCoordinatesY(), 2);
-	double z = Math::Pow(p.getCoordinatesZ() - this->getCoordinatesZ(), 2);
+	double x = Math::Pow(p->getCoordinatesX() - this->getCoordinatesX(), 2);
+	double y = Math::Pow(p->getCoordinatesY() - this->getCoordinatesY(), 2);
+	double z = Math::Pow(p->getCoordinatesZ() - this->getCoordinatesZ(), 2);
 	return Math::Sqrt(x + y + z);
 }
 double Punto3D::getAngle()

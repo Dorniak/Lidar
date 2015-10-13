@@ -39,7 +39,7 @@ ref class Punto3D
 
 #pragma region
 		void visualize();
-		double distanceToPoint(Punto3D p);
+		double distanceToPoint(Punto3D^ p);
 #pragma endregion Others
 
 #pragma region

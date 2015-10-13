@@ -3,7 +3,7 @@ Obstaculo::Obstaculo() {
 
 
 }
-void Obstaculo::setDirection(Punto3D antPosition)
+void Obstaculo::setDirection(Punto3D ^antPosition)
 {
 	//TODO::Calcular el vector direccion restando las componentesdel centro actual menos el centro anterior
 }
