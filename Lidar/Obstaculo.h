@@ -7,7 +7,13 @@ ref class Obstaculo
 public:
 	Obstaculo();
 
+<<<<<<< HEAD
 #pragma region
+=======
+	void setDirection(Punto3D^ antPosition);//Pone la direccion al obstaculo
+	void setVelocity();//Pone la velocidad a partir del modulo del vector de direccion
+
+>>>>>>> origin/master
 	Punto3D^ getCenter();//Devuelve el centro del obstaculo
 	Punto3D^ getPrediceCenter();//Devuelve el centro predicho del obstaculo
 	Punto3D^ getNorth();

@@ -36,11 +36,16 @@ ref class Punto3D
 #pragma endregion Getters
 
 #pragma region
+<<<<<<< HEAD
 		void CalculateCoordenates();
 		double distanceToPoint(Punto3D p);
 		Punto3D^ operator-(Punto3D ^ v);
 		Punto3D^ operator+(Punto3D ^ v);
 		Punto3D^ operator*(double d);
+=======
+		void visualize();
+		double distanceToPoint(Punto3D^ p);
+>>>>>>> origin/master
 #pragma endregion Others
 
 #pragma region

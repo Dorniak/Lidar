@@ -12,6 +12,7 @@ Obstaculo::Obstaculo() {
 	Direction = gcnew Punto3D();
 	Velocity = 0;
 }
+<<<<<<< HEAD
 
 Punto3D^ Obstaculo::getNorth(){
 	return North;
@@ -21,6 +22,11 @@ Punto3D^ Obstaculo::getSouth(){
 }
 Punto3D^ Obstaculo::getEast(){
 	return East;
+=======
+void Obstaculo::setDirection(Punto3D ^antPosition)
+{
+	//TODO::Calcular el vector direccion restando las componentesdel centro actual menos el centro anterior
+>>>>>>> origin/master
 }
 Punto3D^ Obstaculo::getWest(){
 	return West;
