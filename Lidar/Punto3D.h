@@ -1,5 +1,5 @@
 #pragma once
-
+#include <math.h>
 using namespace System;
 using namespace std;
 
@@ -10,8 +10,6 @@ ref class Punto3D
 		Punto3D();
 
 #pragma region
-
-		void setExist(bool ex);
 		void setObstacle(int Obs);
 		void setCoordinatesX(double cx);
 		void setCoordinatesY(double cy);
@@ -26,7 +24,6 @@ ref class Punto3D
 #pragma endregion Setters
 
 #pragma region
-		bool getExists();
 		int getObs();
 		double getCoordinatesX();
 		double getCoordinatesY();
@@ -35,16 +32,19 @@ ref class Punto3D
 		double getIntensity();
 		double getAzimuth();
 		double getAngle();
+		double getModule();
 #pragma endregion Getters
 
 #pragma region
-		void visualize();
+		void CalculateCoordenates();
 		double distanceToPoint(Punto3D p);
+		Punto3D^ operator-(Punto3D ^ v);
+		Punto3D^ operator+(Punto3D ^ v);
+		Punto3D^ operator*(double d);
 #pragma endregion Others
 
 #pragma region
 	private:
-		bool Exist;			// The point exist or not
 		int Obstacle;		// Obstacle that contains the point
 		double Intensity;	// Bounced beam intensity
 		double Distance;	// Distance to the point

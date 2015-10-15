@@ -17,10 +17,6 @@ Punto3D::Punto3D() {
 	y = 0;
 	z = 0;
 }
-void Punto3D::setExist(bool ex)
-{
-	Exist = ex;
-}
 void Punto3D::setObstacle(int Obs)
 {
 	Obstacle = Obs;
@@ -35,8 +31,8 @@ void Punto3D::setCoordinatesZ(double cz) {
 	z = cz;
 }
 void Punto3D::setDistance(double d) {
-	//Distance = d;
-	Distance = d + 2;
+
+	Distance = d;
 }
 void Punto3D::setIntensity(double i) {
 	Intensity = i;
@@ -80,13 +76,7 @@ void Punto3D::setAngle(int channel)
 	case 15: Angle = 15; break;
 	}
 }
-void Punto3D::visualize() {
-	Console::WriteLine("Distance: {0}\t Intensidad: {1}\t Aimuth {2}",Distance,Intensity,Azimuth);
-}
-bool Punto3D::getExists()
-{
-	return	Exist;
-}
+
 int Punto3D::getObs()
 {
 	return Obstacle;
@@ -109,14 +99,57 @@ double Punto3D::getIntensity() {
 double Punto3D::getAzimuth() {
 	return Azimuth;
 }
+void Punto3D::CalculateCoordenates()
+{
+	x = Distance*cos(Angle)*sin(Azimuth);
+	y = Distance*cos(Angle)*cos(Azimuth);
+	z = Distance*sin(Angle);
+}
 double Punto3D::distanceToPoint(Punto3D p)
 {
-	double x = Math::Pow(p.getCoordinatesX() - this->getCoordinatesX(), 2);
-	double y = Math::Pow(p.getCoordinatesY() - this->getCoordinatesY(), 2);
-	double z = Math::Pow(p.getCoordinatesZ() - this->getCoordinatesZ(), 2);
-	return Math::Sqrt(x + y + z);
+	return (p - this)->getModule();
 }
 double Punto3D::getAngle()
 {
 	return Angle;
+}
+
+double Punto3D::getModule()
+{
+	
+		return sqrt(pow(2, x) + pow(2,y) + pow(2,z));
+
+}
+
+Punto3D^ Punto3D::operator+(Punto3D^ v)
+{
+		
+		Punto3D^ result = gcnew Punto3D();
+
+		result->x = x + v->x;
+		result->y = y + v->y;
+		result->z = z + v->z;
+
+		return result;
+}
+Punto3D ^ Punto3D::operator*(double d)
+{
+	Punto3D^ result = gcnew Punto3D();
+
+	result->x = x * d;
+	result->y = y * d;
+	result->z = z * d;
+
+	return result;
+}
+Punto3D^ Punto3D::operator-(Punto3D^ v)
+{
+	
+		Punto3D^ result = gcnew Punto3D();
+
+		result->x = x - v->x;
+		result->y = y - v->y;
+		result->z = z - v->z;
+
+		return result;
 }
