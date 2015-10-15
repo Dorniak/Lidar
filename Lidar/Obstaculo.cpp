@@ -1,7 +1,7 @@
 #include "Obstaculo.h"
-
 Obstaculo::Obstaculo() {
 
+<<<<<<< HEAD
 	North = gcnew Punto3D();
 	South = gcnew Punto3D();
 	East = gcnew Punto3D();
@@ -27,62 +27,43 @@ void Obstaculo::setDirection(Punto3D ^antPosition)
 {
 	//TODO::Calcular el vector direccion restando las componentesdel centro actual menos el centro anterior
 >>>>>>> origin/master
+=======
+
+>>>>>>> parent of 30cb8e0... Punto y Obstaculos totalmente implentados
 }
-Punto3D^ Obstaculo::getWest(){
-	return West;
-}
-int Obstaculo::getVelocity()
+void Obstaculo::setDirection(Punto3D antPosition)
 {
-	return Velocity;
+	//TODO::Calcular el vector direccion restando las componentesdel centro actual menos el centro anterior
+}
+void Obstaculo::setVelocity()
+{
+	//TODO::Calcular el modulo del vector direccion y multiplicarlo por el tiempo de barrido
 }
 Punto3D^ Obstaculo::getCenter()
 {
 	return Center;
 }
-Punto3D^ Obstaculo::getPrediceCenter()
+Punto3D^ Obstaculo::getPCenter()
 {
-	return Predice_Center;
+	return PrediceCenter;
 }
+int Obstaculo::getVelocity()
+{
+	return Velocity;
+}
+void Obstaculo::prepareObstacle()
+{
+	//TODO::Hacer el calculo del cubo,centro,bordes...
+}
+void  Obstaculo::calcCentro()
+{
 
-void Obstaculo::setDirection(Punto3D^ antPosition)
+}
+void  Obstaculo::calcCentropred()
 {
-	Direction = Center - antPosition;
-}
-void Obstaculo::setVelocity(double Car_velocity, double Frecuency)
-{
-	Punto3D^ v = gcnew Punto3D();
-	v->setCoordinatesX(0);
-	v->setCoordinatesY(Car_velocity);
-	v->setCoordinatesZ(0);
-	Punto3D^ w = gcnew Punto3D();
-	w = Direction*Frecuency - v;
-	Velocity = w->getModule();
-	//TODO::Calcular el modulo del vector direccion y multiplicarlo por el tiempo de barrido v a vector, direccion - v, direciona modulo/fr
-}
-void Obstaculo::setNorth(Punto3D^ p){
-	North = p;
-}
-void Obstaculo::setSouth(Punto3D^ p){
-	South = p;
-}
-void Obstaculo::setEast(Punto3D^ p){
-	East = p;
-}
-void Obstaculo::setWest(Punto3D^ p){
-	West = p;
-}
 
-void  Obstaculo::calculateCenter()
-{
-	Center->setCoordinatesX((East->getCoordinatesX() + West->getCoordinatesX()) / 2);
-	Center->setCoordinatesY((East->getCoordinatesY() + West->getCoordinatesY()) / 2);
-	Center->setCoordinatesZ((North->getCoordinatesZ() + South->getCoordinatesZ()) / 2);
 }
-void  Obstaculo::calculatePrediceCenter()
-{
-	Predice_Center = Direction + Center;
-}
-void Obstaculo::calculateTimeToCollision()
+void Obstaculo::calcTTC()
 {
 	//TODO::Calcular el TTC a partir de la velocidad del coche y del veector direccion del obstaculo
 }
