@@ -9,7 +9,7 @@ using namespace std;
 ref class Punto3D
 {
 public:
-
+	Punto3D::Punto3D(const Punto3D %copy);
 #pragma region Constructors Definitions
 	Punto3D(double d, double i, double r, double a);
 	Punto3D();
@@ -45,9 +45,9 @@ public:
 
 	void CalculateCoordinates();
 	double distanceToPoint(Punto3D p);
-	Punto3D^ operator-(Punto3D ^ v);
-	Punto3D^ operator+(Punto3D ^ v);
-	Punto3D^ operator*(double d);
+	Punto3D operator-(Punto3D v);
+	Punto3D operator+(Punto3D v);
+	Punto3D operator*(double d);
 
 #pragma endregion
 

@@ -1,6 +1,19 @@
 #include "Punto3D.h"
 
 #pragma region Constructors
+//Copy constructor
+Punto3D::Punto3D(const Punto3D %copy)
+{
+	Distance = copy.Distance;
+	Obstacle = copy.Distance;
+	Intensity = copy.Distance;
+	Distance = copy.Distance;
+	Azimuth = copy.Distance;
+	Angle = copy.Distance;
+	x = copy.Distance;
+	y = copy.Distance;
+	z = copy.Distance;
+}
 
 /// <summary>
 /// Initializes a new instance of the <see cref="Punto3D"/> class.
@@ -235,33 +248,33 @@ double Punto3D::distanceToPoint(Punto3D p)
 
 #pragma region Operators
 
-Punto3D^ Punto3D::operator+(Punto3D^ v)
+Punto3D Punto3D::operator+(Punto3D v)
 {
-	Punto3D^ result = gcnew Punto3D();
+	Punto3D result ;
 
-	result->x = x + v->x;
-	result->y = y + v->y;
-	result->z = z + v->z;
+	result.x = x + v.x;
+	result.y = y + v.y;
+	result.z = z + v.z;
 
 	return result;
 }
-Punto3D ^ Punto3D::operator*(double d)
+Punto3D Punto3D::operator*(double d)
 {
-	Punto3D^ result = gcnew Punto3D();
+	Punto3D result ;
 
-	result->x = x * d;
-	result->y = y * d;
-	result->z = z * d;
+	result.x = x * d;
+	result.y = y * d;
+	result.z = z * d;
 
 	return result;
 }
-Punto3D^ Punto3D::operator-(Punto3D^ v)
+Punto3D Punto3D::operator-(Punto3D v)
 {
-	Punto3D^ result = gcnew Punto3D();
+	Punto3D result;
 
-	result->x = x - v->x;
-	result->y = y - v->y;
-	result->z = z - v->z;
+	result.x = x - v.x;
+	result.y = y - v.y;
+	result.z = z - v.z;
 
 	return result;
 }
