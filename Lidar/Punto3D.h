@@ -5,6 +5,7 @@ using namespace std;
 #define X_AXE_CORRECTION 0
 #define Y_AXE_CORRECTION 0
 #define Z_AXE_CORRECTION 0
+
 ref class Punto3D
 {
 public:
@@ -29,7 +30,7 @@ public:
 #pragma endregion
 
 #pragma region Getters Definitions
-	int getObs();
+	int getObstacle();
 	double getCoordinatesX();
 	double getCoordinatesY();
 	double getCoordinatesZ();
@@ -42,7 +43,7 @@ public:
 
 #pragma region Others
 
-	void CalculateCoordenates();
+	void CalculateCoordinates();
 	double distanceToPoint(Punto3D p);
 	Punto3D^ operator-(Punto3D ^ v);
 	Punto3D^ operator+(Punto3D ^ v);
