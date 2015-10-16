@@ -5,34 +5,46 @@
 ref class Obstaculo
 {
 public:
-	Obstaculo();
 
-#pragma region
+#pragma region Constructors
+	Obstaculo();
+#pragma endregion
+
+#pragma region Getters Definitions
+
 	Punto3D^ getCenter();//Devuelve el centro del obstaculo
 	Punto3D^ getPrediceCenter();//Devuelve el centro predicho del obstaculo
 	Punto3D^ getNorth();
 	Punto3D^ getSouth();
 	Punto3D^ getEast();
 	Punto3D^ getWest();
-#pragma endregion Getters
+	double getVelocity();//Devuelve a la velocidad a la que va el obstaculo
 
-#pragma region
+#pragma endregion
+
+#pragma region Setters Definitions
+
 	void setNorth(Punto3D^ p);
 	void setSouth(Punto3D^ p);
 	void setEast(Punto3D^ p);
 	void setWest(Punto3D^ p);
-#pragma endregion Setters
-
-
-	void setDirection(Punto3D^ antPosition);//Pone la direccion al obstaculo
+	void setDirection(Punto3D^ Previous_Position);//Pone la direccion al obstaculo
 	void setVelocity(double Car_velocity, double Frecuency);//Pone la velocidad a partir del modulo del vector de direccion
-	int getVelocity();//Devuelve a la velocidad a la que va el obstaculo
+
+#pragma endregion
+
+#pragma region Others
+
 	void calculateCenter();//Calcula el centro del obstaculo
 	void calculatePrediceCenter();//Calcula el centro predicho a partir de la velocidad del coche y el vector de direccion
 	void calculateTimeToCollision();//Calcula el tiempo de colision del obstaculo con el coche
-	cliext::vector <Punto3D> components;
+
+#pragma endregion
 
 private:
+
+#pragma region Propieties
+
 	Punto3D^ North;;
 	Punto3D^ South;
 	Punto3D^ East;
@@ -41,4 +53,7 @@ private:
 	Punto3D^ Predice_Center;
 	Punto3D^ Direction;
 	double Velocity;
+	cliext::vector <Punto3D^> components;
+
+#pragma endregion
 };

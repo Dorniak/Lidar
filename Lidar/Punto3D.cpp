@@ -1,22 +1,29 @@
 #include "Punto3D.h"
 
+#pragma region Constructors
 
-Punto3D::Punto3D(double d, double i, double r) {
+Punto3D::Punto3D(double d, double i, double r, double a) {
+
 	Distance = d;
 	Intensity = i;
 	Azimuth = r;
-	x = 0;
-	y = 0;
-	z = 0;
+	Angle = a;
+	CalculateCoordenates();
 }
 Punto3D::Punto3D() {
 	Distance = -1;
 	Intensity = -1;
 	Azimuth = -1;
+	Angle = -1;
 	x = 0;
 	y = 0;
 	z = 0;
 }
+
+#pragma endregion
+
+#pragma region Setters Implementations
+
 void Punto3D::setObstacle(int Obs)
 {
 	Obstacle = Obs;
@@ -31,7 +38,6 @@ void Punto3D::setCoordinatesZ(double cz) {
 	z = cz;
 }
 void Punto3D::setDistance(double d) {
-
 	Distance = d;
 }
 void Punto3D::setIntensity(double i) {
@@ -77,6 +83,10 @@ void Punto3D::setAngle(int channel)
 	}
 }
 
+#pragma endregion
+
+#pragma region Getters Implementation
+
 int Punto3D::getObs()
 {
 	return Obstacle;
@@ -99,31 +109,35 @@ double Punto3D::getIntensity() {
 double Punto3D::getAzimuth() {
 	return Azimuth;
 }
-void Punto3D::CalculateCoordenates()
-{
-	x = Distance*cos(Angle)*sin(Azimuth);
-	y = Distance*cos(Angle)*cos(Azimuth);
-	z = Distance*sin(Angle);
-}
-double Punto3D::distanceToPoint(Punto3D ^ p)
-{
-	return (p - this)->getModule();
-}
 double Punto3D::getAngle()
 {
 	return Angle;
 }
-
 double Punto3D::getModule()
 {
-
 	return sqrt(pow(2, x) + pow(2, y) + pow(2, z));
-
 }
+
+#pragma endregion
+
+#pragma region Others Functions
+
+void Punto3D::CalculateCoordenates()
+{
+	x = (Distance*cos(Angle)*sin(Azimuth)) + X_AXE_CORRECTION;
+	y = (Distance*cos(Angle)*cos(Azimuth)) + Y_AXE_CORRECTION;
+	z = (Distance*sin(Angle)) + Z_AXE_CORRECTION;
+}
+double Punto3D::distanceToPoint(Punto3D p)
+{
+	return (p - this)->getModule();
+}
+#pragma endregion
+
+#pragma region Operators
 
 Punto3D^ Punto3D::operator+(Punto3D^ v)
 {
-
 	Punto3D^ result = gcnew Punto3D();
 
 	result->x = x + v->x;
@@ -144,7 +158,6 @@ Punto3D ^ Punto3D::operator*(double d)
 }
 Punto3D^ Punto3D::operator-(Punto3D^ v)
 {
-
 	Punto3D^ result = gcnew Punto3D();
 
 	result->x = x - v->x;
@@ -153,3 +166,5 @@ Punto3D^ Punto3D::operator-(Punto3D^ v)
 
 	return result;
 }
+
+#pragma endregion

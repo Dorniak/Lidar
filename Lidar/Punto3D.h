@@ -2,14 +2,19 @@
 #include <math.h>
 using namespace System;
 using namespace std;
-
+#define X_AXE_CORRECTION 0
+#define Y_AXE_CORRECTION 0
+#define Z_AXE_CORRECTION 0
 ref class Punto3D
 {
 public:
-	Punto3D(double d, double i, double r);
-	Punto3D();
 
-#pragma region
+#pragma region Constructors Definitions
+	Punto3D(double d, double i, double r, double a);
+	Punto3D();
+#pragma endregion
+
+#pragma region  Setters Definitions
 	void setObstacle(int Obs);
 	void setCoordinatesX(double cx);
 	void setCoordinatesY(double cy);
@@ -21,9 +26,9 @@ public:
 	void setIntensity(Byte i);
 	void setAzimuth(Byte i, Byte j);
 	void setAngle(int channel);
-#pragma endregion Setters
+#pragma endregion
 
-#pragma region
+#pragma region Getters Definitions
 	int getObs();
 	double getCoordinatesX();
 	double getCoordinatesY();
@@ -33,26 +38,29 @@ public:
 	double getAzimuth();
 	double getAngle();
 	double getModule();
-#pragma endregion Getters
+#pragma endregion
 
-#pragma region
+#pragma region Others
+
 	void CalculateCoordenates();
-	double distanceToPoint(Punto3D ^ p);
+	double distanceToPoint(Punto3D p);
 	Punto3D^ operator-(Punto3D ^ v);
 	Punto3D^ operator+(Punto3D ^ v);
 	Punto3D^ operator*(double d);
-#pragma endregion Others
 
-#pragma region
+#pragma endregion
+
 private:
+
+#pragma region  Propierties
 	int Obstacle;		// Obstacle that contains the point
 	double Intensity;	// Bounced beam intensity
 	double Distance;	// Distance to the point
 	double Azimuth;		// Horizontal angle Y-X
 	double Angle;		// Vertical angle Laser Id Z-Y
 	double x;			// X coordinate of the point
-	double y;			// Y coordinate of the point	
+	double y;			// Y coordinate of the point
 	double z;			// Z coordinate of the point
-};
 
-#pragma endregion Propierties
+#pragma endregion
+};
