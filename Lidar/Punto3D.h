@@ -37,7 +37,7 @@ public:
 
 #pragma region
 	void CalculateCoordenates();
-	double distanceToPoint(Punto3D p);
+	double distanceToPoint(Punto3D ^ p);
 	Punto3D^ operator-(Punto3D ^ v);
 	Punto3D^ operator+(Punto3D ^ v);
 	Punto3D^ operator*(double d);

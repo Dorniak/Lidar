@@ -105,7 +105,7 @@ void Punto3D::CalculateCoordenates()
 	y = Distance*cos(Angle)*cos(Azimuth);
 	z = Distance*sin(Angle);
 }
-double Punto3D::distanceToPoint(Punto3D p)
+double Punto3D::distanceToPoint(Punto3D ^ p)
 {
 	return (p - this)->getModule();
 }

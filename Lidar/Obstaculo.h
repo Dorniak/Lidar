@@ -30,6 +30,7 @@ public:
 	void calculateCenter();//Calcula el centro del obstaculo
 	void calculatePrediceCenter();//Calcula el centro predicho a partir de la velocidad del coche y el vector de direccion
 	void calculateTimeToCollision();//Calcula el tiempo de colision del obstaculo con el coche
+	cliext::vector <Punto3D> components;
 
 private:
 	Punto3D^ North;;
@@ -40,5 +41,4 @@ private:
 	Punto3D^ Predice_Center;
 	Punto3D^ Direction;
 	double Velocity;
-	cliext::vector <Punto3D^> components;
 };
