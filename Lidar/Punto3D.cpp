@@ -5,14 +5,13 @@
 Punto3D::Punto3D(const Punto3D %copy)
 {
 	Distance = copy.Distance;
-	Obstacle = copy.Distance;
-	Intensity = copy.Distance;
-	Distance = copy.Distance;
-	Azimuth = copy.Distance;
-	Angle = copy.Distance;
-	x = copy.Distance;
-	y = copy.Distance;
-	z = copy.Distance;
+	Obstacle = copy.Obstacle;
+	Intensity = copy.Intensity;
+	Azimuth = copy.Azimuth;
+	Angle = copy.Angle;
+	x = copy.x;
+	y = copy.y;
+	z = copy.z;
 }
 
 /// <summary>
@@ -219,7 +218,7 @@ double Punto3D::getAngle()
 /// <returns></returns>
 double Punto3D::getModule()
 {
-	return sqrt(pow(2, x) + pow(2, y) + pow(2, z));
+	return sqrt(pow(x, 2) + pow(y, 2) + pow(z, 2));
 }
 
 #pragma endregion
@@ -242,7 +241,7 @@ void Punto3D::CalculateCoordinates()
 /// <returns></returns>
 double Punto3D::distanceToPoint(Punto3D p)
 {
-	return (p - this)->getModule();
+	return (p - this).getModule();
 }
 #pragma endregion
 
@@ -275,6 +274,30 @@ Punto3D Punto3D::operator-(Punto3D v)
 	result.x = x - v.x;
 	result.y = y - v.y;
 	result.z = z - v.z;
+
+	return result;
+}
+
+Punto3D Punto3D::operator-(Punto3D^ v)
+{
+	Punto3D result;
+
+	result.x = x - v->x;
+	result.y = y - v->y;
+	result.z = z - v->z;
+
+	return result;
+}
+Punto3D Punto3D::operator=(Punto3D v)
+{
+	Punto3D result;
+
+	result.x = v.x;
+	result.y = v.y;
+	result.z = v.z;
+	result.Angle = v.Angle;
+	result.Azimuth = v.Azimuth;
+	result.Distance = v.Distance;
 
 	return result;
 }

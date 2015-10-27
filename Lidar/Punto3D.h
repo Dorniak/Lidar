@@ -46,6 +46,8 @@ public:
 	void CalculateCoordinates();
 	double distanceToPoint(Punto3D p);
 	Punto3D operator-(Punto3D v);
+	Punto3D operator-(Punto3D ^ v);
+	Punto3D operator=(Punto3D v);
 	Punto3D operator+(Punto3D v);
 	Punto3D operator*(double d);
 

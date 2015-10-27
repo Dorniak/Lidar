@@ -4,10 +4,15 @@
 
 void Main(cli::array<String^>^ args)
 {
-	Punto3D^ p = gcnew Punto3D();
-	p->setDistance(5);
+	Punto3D p;
 	Punto3D aa;
-	aa.setDistance(10);
-	Console::WriteLine("distancia {0}", aa.getDistance());
-	Console::WriteLine("distancia {0}",p->getDistance());
+	p.setCoordinatesX(0);
+	p.setCoordinatesY(0);
+	p.setCoordinatesZ(1);
+	aa.setCoordinatesX(0);
+	aa.setCoordinatesY(0);
+	aa.setCoordinatesZ(2);
+	aa.distanceToPoint(p);
+	Console::WriteLine("Distancia {0}", aa.distanceToPoint(p));
+	
 }
