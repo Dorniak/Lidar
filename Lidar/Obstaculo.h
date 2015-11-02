@@ -1,11 +1,14 @@
 #pragma once
 #include "Punto3D.h"
-#include <cliext/vector>
+//#include <cliext\vector>
 
+using namespace std;
+using namespace System;
+using namespace System::Collections::Generic;
 ref class Obstaculo
 {
 public:
-
+	Obstaculo::Obstaculo(const Obstaculo %copy);
 #pragma region Constructors
 	Obstaculo();
 #pragma endregion
@@ -38,7 +41,8 @@ public:
 	void calculateCenter();//Calcula el centro del obstaculo
 	void calculatePrediceCenter();//Calcula el centro predicho a partir de la velocidad del coche y el vector de direccion
 	void calculateTimeToCollision();//Calcula el tiempo de colision del obstaculo con el coche
-	cliext::vector <Punto3D> components;
+	//cliext::vector <Punto3D> components;
+	List<Punto3D^>^ listMenor = gcnew List<Punto3D^>();
 #pragma endregion
 
 private:

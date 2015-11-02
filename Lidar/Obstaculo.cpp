@@ -2,6 +2,21 @@
 
 #pragma region Constructor
 
+Obstaculo::Obstaculo(const Obstaculo % copy)
+{
+	North = copy.North;
+	South = copy.South;
+	East = copy.East;
+	West = copy.West;
+	Center = copy.Center;
+	Predice_Center = copy.Predice_Center;
+	Direction = copy.Direction;
+	Velocity = copy.Velocity;
+	/*for (int i = 0, i < copy.components.size(), i++) {
+		components.push_back(copy.components[i]);
+	}*/
+}
+
 /// <summary>
 /// Initializes a new instance of the <see cref="Obstaculo"/> class.
 /// </summary>
