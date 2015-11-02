@@ -32,28 +32,28 @@ Obstaculo::Obstaculo() {
 /// Gets the north.
 /// </summary>
 /// <returns></returns>
-Punto3D Obstaculo::getNorth() {
+Punto3D^ Obstaculo::getNorth() {
 	return North;
 }
 /// <summary>
 /// Gets the south.
 /// </summary>
 /// <returns></returns>
-Punto3D Obstaculo::getSouth() {
+Punto3D^ Obstaculo::getSouth() {
 	return South;
 }
 /// <summary>
 /// Gets the east.
 /// </summary>
 /// <returns></returns>
-Punto3D Obstaculo::getEast() {
+Punto3D^ Obstaculo::getEast() {
 	return East;
 }
 /// <summary>
 /// Gets the west.
 /// </summary>
 /// <returns></returns>
-Punto3D Obstaculo::getWest() {
+Punto3D^ Obstaculo::getWest() {
 	return West;
 }
 /// <summary>
@@ -68,7 +68,7 @@ double Obstaculo::getVelocity()
 /// Gets the center of the obstacle.
 /// </summary>
 /// <returns></returns>
-Punto3D Obstaculo::getCenter()
+Punto3D^ Obstaculo::getCenter()
 {
 	return Center;
 }
@@ -76,7 +76,7 @@ Punto3D Obstaculo::getCenter()
 /// Gets the predict center.
 /// </summary>
 /// <returns></returns>
-Punto3D Obstaculo::getPrediceCenter()
+Punto3D^ Obstaculo::getPrediceCenter()
 {
 	return Predice_Center;
 }
@@ -89,7 +89,7 @@ Punto3D Obstaculo::getPrediceCenter()
 /// Sets the direction of the obstacle.
 /// </summary>
 /// <param name="Previous_Position">The previous_ position.</param>
-void Obstaculo::setDirection(Punto3D Previous_Position)
+void Obstaculo::setDirection(Punto3D^ Previous_Position)
 {
 	Direction = Center - Previous_Position;
 }
@@ -111,28 +111,28 @@ void Obstaculo::setVelocity(double Car_velocity, double Frecuency)
 /// Sets the north.
 /// </summary>
 /// <param name="p">The North.</param>
-void Obstaculo::setNorth(Punto3D p) {
+void Obstaculo::setNorth(Punto3D^ p) {
 	North = p;
 }
 /// <summary>
 /// Sets the south.
 /// </summary>
 /// <param name="p">The South.</param>
-void Obstaculo::setSouth(Punto3D p) {
+void Obstaculo::setSouth(Punto3D^ p) {
 	South = p;
 }
 /// <summary>
 /// Sets the east.
 /// </summary>
 /// <param name="p">The East.</param>
-void Obstaculo::setEast(Punto3D p) {
+void Obstaculo::setEast(Punto3D^ p) {
 	East = p;
 }
 /// <summary>
 /// Sets the west.
 /// </summary>
 /// <param name="p">The West.</param>
-void Obstaculo::setWest(Punto3D p) {
+void Obstaculo::setWest(Punto3D^ p) {
 	West = p;
 }
 
@@ -145,9 +145,9 @@ void Obstaculo::setWest(Punto3D p) {
 /// </summary>
 void  Obstaculo::calculateCenter()
 {
-	Center.setCoordinatesX((East.getCoordinatesX() + West.getCoordinatesX()) / 2);
-	Center.setCoordinatesY((East.getCoordinatesY() + West.getCoordinatesY()) / 2);
-	Center.setCoordinatesZ((North.getCoordinatesZ() + South.getCoordinatesZ()) / 2);
+	Center->setCoordinatesX((East->getCoordinatesX() + West->getCoordinatesX()) / 2);
+	Center->setCoordinatesY((East->getCoordinatesY() + West->getCoordinatesY()) / 2);
+	Center->setCoordinatesZ((North->getCoordinatesZ() + South->getCoordinatesZ()) / 2);
 }
 /// <summary>
 /// Calculates the predict center of the obstacle.
