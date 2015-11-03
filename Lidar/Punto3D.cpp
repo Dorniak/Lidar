@@ -241,52 +241,52 @@ void Punto3D::CalculateCoordinates()
 /// <returns></returns>
 double Punto3D::distanceToPoint(Punto3D^ p)
 {
-	return (p - this).getModule();
+	return (p - this)->getModule();
 }
 #pragma endregion
 
 #pragma region Operators
 
-Punto3D Punto3D::operator+(Punto3D^ v)
+Punto3D^ Punto3D::operator+(Punto3D^ v)
 {
-	Punto3D result ;
+	Punto3D^ result ;
 
-	result.x = x + v->x;
-	result.y = y + v->y;
-	result.z = z + v->z;
+	result->x = x + v->x;
+	result->y = y + v->y;
+	result->z = z + v->z;
 
 	return result;
 }
-Punto3D Punto3D::operator*(double d)
+Punto3D^ Punto3D::operator*(double d)
 {
-	Punto3D result ;
+	Punto3D^ result ;
 
-	result.x = x * d;
-	result.y = y * d;
-	result.z = z * d;
+	result->x = x * d;
+	result->y = y * d;
+	result->z = z * d;
 
 	return result;
 }
-Punto3D Punto3D::operator-(Punto3D^ v)
+Punto3D^ Punto3D::operator-(Punto3D^ v)
 {
-	Punto3D result;
+	Punto3D^ result;
 
-	result.x = x - v->x;
-	result.y = y - v->y;
-	result.z = z - v->z;
+	result->x = x - v->x;
+	result->y = y - v->y;
+	result->z = z - v->z;
 
 	return result;
 }
-Punto3D Punto3D::operator=(Punto3D^ v)
+Punto3D^ Punto3D::operator=(Punto3D^ v)
 {
-	Punto3D result;
+	Punto3D^ result;
 
-	result.x = v->x;
-	result.y = v->y;
-	result.z = v->z;
-	result.Angle = v->Angle;
-	result.Azimuth = v->Azimuth;
-	result.Distance = v->Distance;
+	result->x = v->x;
+	result->y = v->y;
+	result->z = v->z;
+	result->Angle = v->Angle;
+	result->Azimuth = v->Azimuth;
+	result->Distance = v->Distance;
 
 	return result;
 }

@@ -101,10 +101,10 @@ void Obstaculo::setDirection(Punto3D^ Previous_Position)
 void Obstaculo::setVelocity(double Car_velocity, double Frecuency)
 {
 	/*Punto3D^ velocity_vector = gcnew Punto3D();*/
-	Punto3D velocity_vector;
-	velocity_vector.setCoordinatesY(Car_velocity);
+	Punto3D^ velocity_vector;
+	velocity_vector->setCoordinatesY(Car_velocity);
 
-	Velocity = (Direction*Frecuency - velocity_vector).getModule();//m/s
+	Velocity = (Direction*Frecuency - velocity_vector)->getModule();//m/s
 //TODO::Calcular el modulo del vector direccion y multiplicarlo por el tiempo de barrido v a vector, direccion - v, direciona modulo/fr
 }
 /// <summary>

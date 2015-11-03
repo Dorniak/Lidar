@@ -42,7 +42,7 @@ public:
 	void calculatePrediceCenter();//Calcula el centro predicho a partir de la velocidad del coche y el vector de direccion
 	void calculateTimeToCollision();//Calcula el tiempo de colision del obstaculo con el coche
 	//cliext::vector <Punto3D> components;
-	List<Punto3D^>^ listMenor = gcnew List<Punto3D^>();
+	List<Punto3D^>^ components = gcnew List<Punto3D^>();
 #pragma endregion
 
 private:
