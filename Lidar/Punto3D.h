@@ -12,6 +12,7 @@ public:
 	Punto3D::Punto3D(const Punto3D %copy);
 #pragma region Constructors Definitions
 	Punto3D(double d, double i, double r, double a);
+	Punto3D(double xx, double yy, double zz);
 	Punto3D();
 #pragma endregion
 
@@ -43,6 +44,7 @@ public:
 
 #pragma region Others
 
+	void visualize();
 	void CalculateCoordinates();
 	double distanceToPoint(Punto3D^ p);
 	Punto3D^ operator-(Punto3D^ v);

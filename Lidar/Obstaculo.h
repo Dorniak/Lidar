@@ -1,6 +1,6 @@
 #pragma once
 #include "Punto3D.h"
-//#include <cliext\vector>
+#include <limits.h>
 
 using namespace std;
 using namespace System;
@@ -40,9 +40,9 @@ public:
 
 	void calculateCenter();//Calcula el centro del obstaculo
 	void calculatePrediceCenter();//Calcula el centro predicho a partir de la velocidad del coche y el vector de direccion
-	void calculateTimeToCollision();//Calcula el tiempo de colision del obstaculo con el coche
-	//cliext::vector <Punto3D> components;
-	List<Punto3D^>^ components = gcnew List<Punto3D^>();
+	void calculateTimeToCollision(double vel);//Calcula el tiempo de colision del obstaculo con el coche
+	void prepareObstacle();
+	List<Punto3D^>^ components;
 #pragma endregion
 
 private:
@@ -53,6 +53,8 @@ private:
 	Punto3D^ South;
 	Punto3D^ East;
 	Punto3D^ West;
+	Punto3D^ Closer;
+	Punto3D^ Farthest;
 	Punto3D^ Center;
 	Punto3D^ Predice_Center;
 	Punto3D^ Direction;

@@ -29,6 +29,12 @@ Punto3D::Punto3D(double d, double i, double r, double a) {
 	Angle = a;
 	CalculateCoordinates();
 }
+Punto3D::Punto3D(double xx, double yy, double zz)
+{
+	x = xx;
+	y = yy;
+	z = zz;
+}
 /// <summary>
 /// Initializes a new instance of the <see cref="Punto3D"/> class.
 /// </summary>
@@ -224,6 +230,11 @@ double Punto3D::getModule()
 #pragma endregion
 
 #pragma region Others Functions
+
+void Punto3D::visualize()
+{
+	Console::WriteLine("X: {0}\t Y: {1}\t Z: {2}",x,y,z);
+}
 
 /// <summary>
 /// Calculates the coordinates.
