@@ -27,7 +27,6 @@ Punto3D::Punto3D(double d, double i, double r, double a) {
 	Intensity = i;
 	Azimuth = r;
 	Angle = a;
-	CalculateCoordinates();
 }
 Punto3D::Punto3D(double xx, double yy, double zz)
 {
@@ -239,11 +238,11 @@ void Punto3D::visualize()
 /// <summary>
 /// Calculates the coordinates.
 /// </summary>
-void Punto3D::CalculateCoordinates()
+void Punto3D::CalculateCoordinates(double xx, double yy, double zz)
 {
-	x = (Distance*cos(Angle)*sin(Azimuth)) + X_AXE_CORRECTION;
-	y = (Distance*cos(Angle)*cos(Azimuth)) + Y_AXE_CORRECTION;
-	z = (Distance*sin(Angle)) + Z_AXE_CORRECTION;
+	x = (Distance*cos(Angle)*sin(Azimuth)) +xx;
+	y = (Distance*cos(Angle)*cos(Azimuth)) + yy;
+	z = (Distance*sin(Angle)) + zz;
 }
 /// <summary>
 /// Distances between points.
@@ -253,6 +252,10 @@ void Punto3D::CalculateCoordinates()
 double Punto3D::distanceToPoint(Punto3D^ p)
 {
 	return (p - this)->getModule();
+}
+String ^ Punto3D::verCoordenadas()
+{
+	return ""+ x +","+ y +","+ z;
 }
 #pragma endregion
 

@@ -2,9 +2,7 @@
 #include <math.h>
 using namespace System;
 using namespace std;
-#define X_AXE_CORRECTION 0
-#define Y_AXE_CORRECTION 0
-#define Z_AXE_CORRECTION 0
+
 
 ref class Punto3D
 {
@@ -45,8 +43,9 @@ public:
 #pragma region Others
 
 	void visualize();
-	void CalculateCoordinates();
+	void CalculateCoordinates(double xx, double yy, double zz);
 	double distanceToPoint(Punto3D^ p);
+	String^ verCoordenadas();
 	Punto3D^ operator-(Punto3D^ v);
 	Punto3D^ operator=(Punto3D^ v);
 	Punto3D^ operator+(Punto3D^ v);
